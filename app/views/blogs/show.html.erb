@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @blog %>
+<div>
+<%= render partial: 'like_button', locals: { blog: @blog } %>
+
+  <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
+  <%= link_to "Back to blogs", blogs_path %>
+
+<h2>Comments</h2>
+<% @blog.comments.each do |comment| %>
+  <div>
+  <%= link_to comment.user.email, user_path(comment.user) %>
+
+    
+    <%= comment.content %>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= render 'comments/form' %>
+<% end %>

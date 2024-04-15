@@ -1,0 +1,13 @@
+<%= form_with(model: [ @blog, @blog.comments.build ], local: true) do |form| %>
+  <% if user_signed_in? %>
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content, rows: 3 %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Add Comment', class: 'btn btn-primary' %>
+    </div>
+  <% else %>
+    <p>Please <%= link_to 'sign in', new_user_session_path %> to add a comment.</p>
+  <% end %>
+<% end %>

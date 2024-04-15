@@ -1,0 +1,9 @@
+<% if user_signed_in? && current_user.present? %>
+  <% if current_user.likes.exists?(blog_id: blog.id) %>
+    <%= button_to "Unlike", unlike_blog_path(blog), remote: true, method: :delete, id: "unlike_button" %>
+  <% else %>
+    <%= button_to "Like", like_blog_path(blog), remote: true, method: :post, id: "like_button" %>
+  <% end %>
+<% end %>
+
+<p>Likes: <%= blog.likes.count %></p>

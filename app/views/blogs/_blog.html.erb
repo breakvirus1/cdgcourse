@@ -1,0 +1,15 @@
+<div id="<%= dom_id blog %>">
+  <p>
+    <strong>Title:</strong>
+    <%= blog.title %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= blog.body %>
+  </p>
+<% if blog.image.attached? %>
+ <%= image_tag blog.image.variant(:display) %>
+ <% end %>
+
+</div>

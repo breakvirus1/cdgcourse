@@ -1,0 +1,19 @@
+<h1><%= @user.email %>'s Profile</h1>
+
+
+
+<% if user_signed_in? && @user != current_user %>
+  <% if current_user.following?(@user) %>
+    <%= button_to "Unfollow", unfollow_user_path(@user), method: :delete, remote: true, id: "unfollow_button" %>
+  <% else %>
+    <%= button_to "Follow", follow_user_path(@user), remote: true, id: "follow_button" %>
+  <% end %>
+<% end %>
+
+<p>Followers: <%= @user.followers_count %></p>
+
+
+<div>
+
+</div>
+  <%= link_to "Back to blogs", blogs_path %>

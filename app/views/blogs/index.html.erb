@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+<% if current_user %>
+<h1>Blogs</h1>
+
+<div id="blogs">
+  <% @blogs.each do |blog| %>
+    <%= render blog %>
+    <%= blog.comments.count %> comments</span>
+    <p>
+      <%= link_to "Show this blog", blog %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New blog", new_blog_path %>
+<% else %>
+Plese login or Register
+<% end %>

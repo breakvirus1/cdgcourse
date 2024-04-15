@@ -1,0 +1,9 @@
+one:
+  title: "First Blog"
+  body: "Lorem ipsum..."
+  user_id: 1
+
+two:
+  title: "Second Blog"
+  body: "Dolor sit amet..."
+  user_id: 2

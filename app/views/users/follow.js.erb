@@ -1,0 +1,3 @@
+document.getElementById("follow_button").innerHTML = "Unfollow";
+document.getElementById("follow_button").setAttribute("id", "unfollow_button");
+document.getElementById("unfollow_button").setAttribute("onclick", "<%= escape_javascript("unfollowUser(#{@user.id})") %>");
